@@ -31,6 +31,30 @@
       border-radius: 10px;
     }
 
+    #div1>.box{
+      background: red;
+    }
+
+    #div2>.box:first-child{
+      background: green;
+    }
+
+    #div2>.box:nth-child(2){
+      background: blue;
+    }
+
+    #div2>.box:nth-child(3){
+      background: yellow;
+    }
+
+    #div2>.box:nth-child(4){
+      background: pink;
+    }
+
+    #div3>.box{
+      background: plum;
+    }
+
     div{
       display: flex;
       gap: 20px;
@@ -91,16 +115,29 @@
 </section>
 
 <script>
-  let color = ["red", "green", "blue", "yellow", "pink", "plum"];
-  const boxes=document.querySelectorAll(".box")
-  setInterval(() => {
-    let last = color.pop();
-    color.unshift(last);
 
-    for (let i = 0; i < boxes.length; i++) {
-      boxes[i].style.backgroundColor=color[i]
-    }
-  },1000)
+  $(document).ready(function (){
+
+  let color = ["red", "green", "blue", "yellow", "pink", "plum"];
+  let interval;
+  const boxes = $(".box");
+
+    $("#start").on({click:function (){
+           interval = setInterval(() => {
+              let last = color.pop();
+              color.unshift(last);
+
+              for (let i = 0; i < boxes.length; i++) {
+                boxes[i].style.backgroundColor=color[i]
+              }
+          },500)
+      }});
+
+    $("#stop").on({click:function (){
+        clearInterval(interval);
+      }});
+
+  });
 
 </script>
 </body>
