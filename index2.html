@@ -4,37 +4,64 @@
     <meta charset="UTF-8">
     <title>Assignment 08 - Case 2</title>
   <style>
-    section:first-child{
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      margin: auto;
-      height: 200px;
-      width: max-content;
-      display: flex;
-      gap: 80px;
-    }
-/*
-    section:first-child>div:first-child{
-      width: 200px;
-      aspect-ratio: 1/1;
-      background: #131212;
-    }*/
-    div{
-      display: flex;
-      gap: 5px;
-      width: 100%;
+    body{
+      background: darkslategray
     }
 
-    section:first-child>div:nth-child(2){
+    section:first-child{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 750px;
+      justify-content: center;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .box{
+      width: 100px;
+      aspect-ratio: 1/0.5;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    div{
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      background: white;
+    }
+
+    div>div{
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      background: black;
+    }
+
+    section:first-child>#div1{
+      justify-content: flex-start;
+      margin-bottom: 4px;
+    }
+
+    section:first-child>#div2{
       justify-content: center;
       margin: 2px 0;
-      border-top: 2px solid black;
-      border-bottom: 2px solid black;
-      padding: 4px 0;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      padding: 10px 0;
     }
+
+    section:first-child>#div3{
+      justify-content: flex-end;
+      margin-top: 2px;
+    }
+
     section:nth-child(2){
       position: absolute;
       left: 200px;
@@ -43,7 +70,6 @@
       display: flex;
       gap: 1000px;
     }
-
     section:nth-child(2)>button{
       width: 90px;
       height: 90px;
@@ -51,8 +77,6 @@
       color: white;
       font-size: 28px;
     }
-
-
   </style>
 </head>
 <body>
