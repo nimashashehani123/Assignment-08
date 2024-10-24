@@ -29,5 +29,19 @@
   <div><h1 id="4">D</h1></div>
   <div><h1 id="5">E</h1></div>
 </section>
+
+<script>
+
+  let arr1 = ["A","B","C","D","E",];
+  setInterval(() =>{
+
+    let last = arr1[4];
+    arr1.pop();
+    arr1.unshift(last);
+    console.log(arr1);
+
+  },3000)
+
+</script>
 </body>
 </html>
