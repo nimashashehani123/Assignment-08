@@ -3,15 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <title>Assignment 08 - Case 2</title>
+  <style>
+    section:first-child{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      height: 200px;
+      width: max-content;
+      display: flex;
+      gap: 80px;
+    }
+/*
+    section:first-child>div:first-child{
+      width: 200px;
+      aspect-ratio: 1/1;
+      background: #131212;
+    }*/
+    div{
+      display: flex;
+      gap: 5px;
+      width: 100%;
+    }
+
+    section:first-child>div:nth-child(2){
+      justify-content: center;
+      margin: 2px 0;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      padding: 4px 0;
+    }
+    section:nth-child(2){
+      position: absolute;
+      left: 200px;
+      bottom: 100px;
+      width: 90%;
+      display: flex;
+      gap: 1000px;
+    }
+
+    section:nth-child(2)>button{
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      color: white;
+      font-size: 28px;
+    }
+
+
+  </style>
 </head>
 <body>
 <section>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+  <div id="div1">
+    <div class="box"></div>
+  </div>
+  <div id="div2">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <div id="div3">
+    <div class="box"></div>
+  </div>
+</section>
+<section>
+  <button style="background: green" id="start">start</button>
+  <button style="background: red" id="stop">stop</button>
 </section>
 </body>
 </html>
