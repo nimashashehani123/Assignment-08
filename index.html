@@ -36,8 +36,8 @@
     }
 
     section:nth-child(2)>button{
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
         border-radius: 50%;
         color: white;
         font-size: 28px;
@@ -61,27 +61,38 @@
     <img src="Assest/image/house%20image.webp" width="200" height="200">
 </section>
 <section>
-    <button style="background: deepskyblue">start</button>
-    <button style="background: red">stop</button>
+    <button style="background: green" id="start">start</button>
+    <button style="background: red" id="stop">stop</button>
 </section>
 
+<script src="Assest/lib/jquery-3.7.1.min.js"></script>
+<script> $(document).ready(function (){
 
-<script>
+    let arr1 = ["A","B","C","D","E",];
+    let interval;
 
-  let arr1 = ["A","B","C","D","E",];
-  setInterval(() =>{
+    $("#start").on({click:function (){
+           interval =  setInterval(() =>{
 
-    let last = arr1[4];
-    arr1.pop();
-    arr1.unshift(last);
+                let last = arr1[4];
+                arr1.pop();
+                arr1.unshift(last);
 
-    document.getElementById("1").innerText = arr1[0];
-    document.getElementById("2").innerText = arr1[1];
-    document.getElementById("3").innerText = arr1[2];
-    document.getElementById("4").innerText = arr1[3];
-    document.getElementById("5").innerText = arr1[4];
+                document.getElementById("1").innerText = arr1[0];
+                document.getElementById("2").innerText = arr1[1];
+                document.getElementById("3").innerText = arr1[2];
+                document.getElementById("4").innerText = arr1[3];
+                document.getElementById("5").innerText = arr1[4];
 
-  },3000)
+            },1000)
+        }});
+    $("#stop").on({click:function (){
+            clearInterval(interval);
+        }});
+
+});
+
+
 
 </script>
 </body>
